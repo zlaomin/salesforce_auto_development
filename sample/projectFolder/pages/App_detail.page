@@ -1,0 +1,18 @@
+<apex:page controller="App_detail">
+    <apex:chart height="350" width="450" data="{!pieData}">
+        <apex:pieSeries dataField="data" labelField="name"/>
+        <apex:legend position="right"/>
+    </apex:chart>
+    <apex:chart data="{!LineData}" height="400" width="500">
+    <apex:legend position="left"/>
+    <apex:axis type="Numeric" position="left" title="download" grid="true"
+        fields="data1,data2" dashSize="2">
+        <apex:chartLabel />
+    </apex:axis>
+    <apex:axis type="Category" position="bottom" fields="name" >
+        <apex:chartLabel rotate="90" font="5px"/>
+    </apex:axis>
+    <apex:barSeries orientation="vertical" axis="left" 
+        xField="name" yField="data1,data2" title="previous week revenue,current week revenue"/>
+</apex:chart>
+</apex:page>

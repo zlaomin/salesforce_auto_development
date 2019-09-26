@@ -1,0 +1,2 @@
+ant deploy
+python upload_app_details.py

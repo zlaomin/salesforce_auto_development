@@ -1,0 +1,13 @@
+<apex:page Controller="Find_apps">
+   <apex:pageBlock >
+      <apex:pageBlockTable value="{!apps}" var="app">
+         <apex:column value="{!app.Name}"/>
+         <apex:column value="{!app.app_category__c}"/>
+         <apex:column value="{!app.current_download__c}"/>
+         <apex:column value="{!app.previous_week_download__c }"/>
+         <apex:column value="{!app.current_revenue__c}"/>
+         <apex:column value="{!app.previous_week_revenue__c}"/>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+    <apex:outputLink value="/apex/App_detail?company_name={!company_name}" >Detail</apex:outputLink>
+</apex:page>
